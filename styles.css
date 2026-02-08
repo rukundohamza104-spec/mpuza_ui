@@ -1,0 +1,736 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+    background-color: #b0dafc;
+    color: black;
+}
+
+/* Top Navigation Bar */
+.top-nav {
+    background-color: #ff4444;
+    display: flex;
+    align-items: center;
+    padding: 8px 20px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    margin-right: 30px;
+}
+
+.nav-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: white;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.nav-item i {
+    font-size: 20px;
+    margin-bottom: 3px;
+}
+
+.nav-item.active {
+    color: white;
+}
+
+.search-bar {
+    flex: 1;
+    max-width: 400px;
+    margin: 0 20px;
+}
+
+.search-bar input {
+    width: 100%;
+    padding: 8px 15px;
+    border: none;
+    border-radius: 20px;
+    outline: none;
+}
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    margin-left: auto;
+}
+
+.notification-icon {
+    position: relative;
+    color: white;
+    font-size: 20px;
+}
+
+.notification-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background-color: #5153f3;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+
+.notification-job {
+    position: absolute;
+    top: -5px;
+    right: 1000px;
+    background-color: #5153f3;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+
+.notification-course {
+    position: absolute;
+    top: -5px;
+    right: 1170px;
+    background-color: #5153f3;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+.notification-net {
+    position: absolute;
+    top: -5px;
+    right: 1080px;
+    background-color: #5153f3;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+.notification-nav {
+    position: absolute;
+    top: -5px;
+    right: 910px;
+    background-color: #5153f3;
+    color: white;
+    border-radius: 50%;
+    width: 18px;
+    height: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 10px;
+}
+.add-headline {
+    display: inline-block;
+    color: #2196F3;
+    font-size: 12px;
+    margin-top: 5px;
+}
+.become-refresher-btn {
+    background-color: white;
+    color: #ff4444;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.profile-icon {
+    color: white;
+    font-size: 20px;
+}
+
+/* Main Container */
+.container {
+    max-width: 1400px;
+    margin: 20px auto;
+    display: grid;
+    grid-template-columns: 250px 1fr 350px;
+    gap: 20px;
+    padding: 0 20px;
+}
+
+/* Left Sidebar */
+.left-sidebar {
+    background-color: #b0dafc;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.profile-header {
+    position: relative;
+    height: 120px;
+}
+
+.cover-image {
+    width: 100%;
+    height: 80px;
+    object-fit: cover;
+}
+
+.profile-avatar {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 4px solid white;
+}
+
+.profile-info {
+    text-align: center;
+    padding: 50px 20px 20px;
+}
+
+.profile-name {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.profile-headline {
+    font-size: 12px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.profile-stats {
+    border-top: 1px solid #e0e0e0;
+    padding: 15px 0;
+}
+
+.stat-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    color: #666;
+    text-decoration: none;
+    font-size: 13px;
+}
+
+.stat-item:hover {
+    background-color: #f5f5f5;
+}
+
+.stat-item i {
+    margin-right: 30px;
+    color: #4a90e2;
+}
+
+.stat-count {
+    color: #4a90e2;
+    font-weight: 600;
+}
+
+.section-title {
+    padding: 15px 20px;
+    font-size: 14px;
+    font-weight: 600;
+    background-color: #b0dafc;
+    border-top: 1px solid #b0dafc;
+}
+
+.company-info, .professional-group {
+    padding: 15px 20px;
+}
+
+.create-btn {
+    display: flex;
+    align-items: center;
+    color: #4a90e2;
+    text-decoration: none;
+    font-size: 13px;
+    padding: 10px 0;
+}
+.content-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.content-header h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+}
+
+.home-icon {
+    width: 35px;
+    height: 35px;
+    background: #2196F3;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+}
+
+.create-btn i {
+    margin-right: 8px;
+}
+
+/* Main Content */
+.main-content {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.post-box {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+}
+.post-bv {
+    background-color: white;
+    border-radius: 10px;
+    padding: 7px;
+}
+
+.post-input-area {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.post-avatar {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+}
+
+.post-input-wrapper {
+    flex: 1;
+}
+
+.post-input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 20px;
+    outline: none;
+    font-size: 14px;
+}
+
+.post-stats {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+    padding-top: 10px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.followers-count {
+    font-size: 13px;
+    color: #4a90e2;
+}
+
+.post-button {
+    background-color: #5dade2;
+    color: white;
+    border: none;
+    padding: 8px 30px;
+    border-radius: 20px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.jobless-count {
+    font-size: 13px;
+    color: #666;
+}
+
+/* Job Cards */
+.job-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+}
+
+.job-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    position: relative;
+}
+
+.job-logo {
+    width: 60px;
+    height: 60px;
+    margin: 0 auto 10px;
+    border-radius: 8px;
+    object-fit: contain;
+}
+
+.company-name {
+    font-weight: 600;
+    font-size: 13px;
+    margin-bottom: 3px;
+}
+
+.job-title {
+    font-size: 11px;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.job-location {
+    font-size: 11px;
+    margin-bottom: 15px;
+}
+
+.urgent-hiring-badge {
+    background-color: #5dade2;
+    color: white;
+    padding: 6px 15px;
+    border-radius: 15px;
+    font-size: 11px;
+    font-weight: 600;
+    display: inline-block;
+    margin-top: 10px;
+}
+
+.time-badge {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #f0f0f0;
+    padding: 3px 8px;
+    border-radius: 10px;
+    font-size: 10px;
+}
+
+/* Organization Cards */
+.organization-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 15px;
+}
+
+.org-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+    color: #2196F3;
+}
+
+.org-logo {
+    width: 50px;
+    height: 50px;
+    margin-right: 15px;
+    border-radius: 8px;
+    color: white;
+}
+
+.org-name {
+    font-weight: 600;
+    font-size: 14px;
+    color: black;
+}
+
+.verified-badge {
+    color: #4a90e2;
+    margin-left: 5px;
+}
+
+.org-info-list {
+    list-style: none;
+    margin: 15px 0;
+}
+
+.org-info-list li {
+    padding: 5px 0;
+    font-size: 13px;
+}
+
+.org-info-list li i {
+    margin-right: 10px;
+}
+
+.org-stats {
+    display: flex;
+    justify-content: space-around;
+    text-align: center;
+    border-top: 1px solid #e0e0e0;
+    padding-top: 15px;
+    margin-top: 15px;
+}
+
+.org-stat {
+    display: flex;
+    flex-direction: column;
+}
+
+.org-stat-value {
+    font-size: 18px;
+    font-weight: 600;
+    color:  red;
+    justify-content: flex-end;
+}
+
+.org-stat-label {
+    font-size: 11px;
+    color: black;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 15px;
+    padding-top: 15px;
+    border-top: 1px solid #e0e0e0;
+}
+
+.action-btn {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    background: none;
+    border: none;
+    color: #666;
+    cursor: pointer;
+    font-size: 13px;
+}
+
+.action-btn i {
+    font-size: 16px;
+}
+
+.action-btn.liked {
+    color: #ff4444;
+}
+
+.follow-btn {
+    background-color: #f0f0f0;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 15px;
+    font-size: 12px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-left: auto;
+}
+
+/* Right Sidebar */
+.right-sidebar {
+    background-color: white;
+    border-radius: 8px;
+    padding: 20px;
+}
+
+.featured-job-header {
+    background: linear-gradient(135deg, #5dade2, #3498db);
+    color: white;
+    padding: 15px;
+    border-radius: 8px 8px 0 0;
+    margin: -20px -20px 20px -20px;
+    text-align: center;
+}
+
+.featured-job-header i {
+    margin-right: 5px;
+}
+
+.featured-info {
+    background-color: #fff9e6;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 11px;
+    margin-bottom: 20px;
+}
+
+.featured-job-card {
+    position: relative;
+}
+
+.close-btn {
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    width: 25px;
+    height: 25px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.featured-company {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 15px;
+}
+
+.featured-logo {
+    width: 200px;
+    height: 200px;
+    border-radius: 8px;
+}
+
+.job-details h3 {
+    font-size: 15px;
+    margin-bottom: 5px;
+}
+
+.job-meta {
+    display: flex;
+    justify-content: flex-end;
+    justify-content: space-between;
+    margin: 15px 0;
+    color: red;
+}
+
+.meta-item {
+    text-align: center;
+}
+
+.meta-value {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.meta-label {
+    font-size: 11px;
+    color: #999;
+}
+
+.job-description-section {
+    margin-top: 20px;
+}
+
+.job-description-section h4 {
+    font-size: 13px;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.job-description-section ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.job-description-section li {
+    padding: 5px 0;
+    padding-left: 20px;
+    position: relative;
+    font-size: 12px;
+}
+
+.job-description-section li:before {
+    content: "⊙";
+    position: absolute;
+    left: 0;
+}
+
+.favorite-btn {
+    background-color: #ff4444;
+    color: white;
+    border: none;
+    padding: 10px;
+    border-radius: 50%;
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+}
+
+.banner-ad {
+    margin-top: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.banner-ad img {
+    width: 100%;
+    height: auto;
+}
+
+.company-logo-img {
+    width: 100%;
+    height: 50px;
+    object-fit: contain;
+    background: #fff;
+    border-radius: 4px;
+}
+
+.user-avatar {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    border: 3px solid gold;
+}
+
+.financial-text {
+    font-size: 11px;
+    margin-top: 5px;
+}
+
+.job-header-logo {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+}
+
+.job-subtitle {
+    font-size: 13px;
+    font-weight: 600;
+    margin: 5px 0;
+}
+
+.job-category {
+    font-size: 12px;
+}
+
+.org-subtitle {
+    font-size: 11px;
+}
